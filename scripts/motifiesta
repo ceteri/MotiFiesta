@@ -1,12 +1,17 @@
-#!/urs/bin/env/ python
+#!/usr/bin/env python
 
-import sys
-import pickle
+from os.path import abspath, dirname
 import argparse
+import pathlib
+import pickle
+import sys
+import warnings
 
 import numpy as np
-import warnings
+
 warnings.simplefilter("ignore", UserWarning)
+
+sys.path.insert(0, str(pathlib.Path(dirname(dirname(abspath(__file__))))))
 
 from MotiFiesta.training.model import MotiFiestaModel
 from MotiFiesta.training.loading import get_loader
